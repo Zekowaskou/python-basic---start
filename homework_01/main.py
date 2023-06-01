@@ -20,13 +20,13 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def is_prime(n):
-    if n < 2:
+def is_prime(num):
+    if num < 2:
         return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
             return False
-        return True
+    return True
 
 
 def filter_numbers(numbers_list, filter_type):
@@ -37,8 +37,7 @@ def filter_numbers(numbers_list, filter_type):
         return [number for number in
     numbers_list if number % 2 == 0]
     elif filter_type == PRIME:
-       return [number for numbers in
-    numbers_list if number
+       return list(filter(is_prime, filter_type))
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
